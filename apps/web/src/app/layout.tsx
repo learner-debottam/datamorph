@@ -1,7 +1,7 @@
 import "../styles/globals.css";
-import HeaderWrapper from "../components/HeaderWrapper";
 import Footer from "../components/Footer";
-import { AuthProvider, useAuth } from "./context/AuthContext";
+import ClientHeaderWrapper from "../components/ClientHeaderWrapper";
+import { AuthProvider } from "./context/AuthContext";
 import ErrorBoundary from "../components/ErrorBoundary";
 
 interface LayoutProps {
@@ -18,10 +18,10 @@ export default function RootLayout({ children }: LayoutProps) {
           content="AI-powered low-code/no-code data transformation platform"
         />
       </head>
-      <body className="flex flex-col min-h-screen bg-gray-50 text-gray-900">
+      <body className="flex flex-col min-h-screen">
         <ErrorBoundary>
           <AuthProvider>
-            <HeaderWrapper /> {/* ← client component */}
+            <ClientHeaderWrapper />
             <main className="flex-1">{children}</main>
             <Footer />
           </AuthProvider>

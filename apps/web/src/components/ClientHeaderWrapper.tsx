@@ -3,7 +3,7 @@
 import Header from "./Header";
 import { useAuth } from "../app/context/AuthContext";
 
-export default function HeaderWrapper() {
+export default function ClientHeaderWrapper() {
   const { user, isAuthenticated } = useAuth();
 
   return (
